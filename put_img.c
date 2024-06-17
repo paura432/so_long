@@ -18,17 +18,17 @@ void	put_floor(char **map, t_image *img)
 	int		x;
 	int		y;
 
-	y = 0;
-	while (map[y])
+	y = -1;
+	while (map[++y])
 	{
-		x = 0;
-		while (map[y][x] != '\0' && map[y][x] != '\n')
+		x = -1;
+		while (map[y][++x] != '\0' && map[y][x] != '\n')
 		{
 			if (map[y][x] == '1')
 			{
 				img = ft_new_sprite(img, "sprites/background.xpm");
 				mlx_put_image_to_window(img->mlx, img->mlx_win,
-				img->img, x * 64, y * 64);
+					img->img, x * 64, y * 64);
 				relative_path = "sprites/wall.xpm";
 			}
 			else
@@ -36,9 +36,7 @@ void	put_floor(char **map, t_image *img)
 			img = ft_new_sprite(img, relative_path);
 			mlx_put_image_to_window(img->mlx, img->mlx_win,
 				img->img, x * 64, y * 64);
-			x++;
 		}
-		y++;
 	}
 }
 

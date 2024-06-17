@@ -40,7 +40,8 @@ int	count_lines_w_fd(char **map)
 
 void	f_fill_p2e(char **flood_map, char target, int y, int x)
 {
-	if (y < 0 || x < 0 || y >= count_lines_w_fd(flood_map)|| x >= count_bytes_w_fd(flood_map[0]))
+	if (y < 0 || x < 0 || y >= count_lines_w_fd(flood_map)
+		|| x >= count_bytes_w_fd(flood_map[0]))
 		return ;
 	if (flood_map[y][x] == 'F' || flood_map[y][x] == target)
 		return ;

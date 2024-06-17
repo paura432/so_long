@@ -22,7 +22,8 @@
 # include "get_next_line/get_next_line.h"
 # include "mlx_linux/mlx.h"
 
-typedef struct s_image {
+typedef struct s_image
+{
 	void	*img;
 	void	*mlx;
 	void	*mlx_win;
@@ -62,6 +63,7 @@ void	down(t_image *img);
 
 //check_move
 
+void	put_floor_cont(char **map, t_image *img, int x, int y);
 void	check_move(t_image *img);
 char	**change_map(char **argv);
 int		check_p(char **map, int x);

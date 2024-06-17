@@ -22,13 +22,13 @@ void	check_move(t_image *img)
 		img->objects -= 1;
 		img->map[img->y_pos][img->x_pos] = '0';
 	}
-	if (img->objects == 0)
-		put_door(img->map, img);
 	if (img->map[img->y_pos][img->x_pos] == 'E' && img->objects == 0)
 	{
 		ft_printf("YOU WIN\n");
 		free_list(img);
 	}
+	if (img->objects == 0)
+		put_door(img->map, img);
 }
 
 int	check_p(char **map, int p)
