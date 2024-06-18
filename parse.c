@@ -16,7 +16,7 @@ int	check_map(char **map, char **argv)
 {
 	char	**flood_map;
 
-	if (!check_walls(map) ||!check_obj(map, 0, 0))
+	if (!check_walls(map) || !check_obj(map, 0, 0))
 		return (0);
 	flood_map = change_map(argv);
 	if (!check_flood_map(flood_map))

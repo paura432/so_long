@@ -40,6 +40,8 @@ typedef struct s_image
 	char	**map;
 }				t_image;
 
+int		check_permision(char **argv);
+
 //read
 t_image	*ft_new_sprite(t_image *img, char *path);
 void	my_mlx_pixel_put(t_image *img, int x, int y, int color);

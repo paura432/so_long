@@ -24,6 +24,7 @@ void	check_move(t_image *img)
 	}
 	if (img->map[img->y_pos][img->x_pos] == 'E' && img->objects == 0)
 	{
+		ft_printf("\nNumero de pasos: %i\n", img->steps += 1);
 		ft_printf("YOU WIN\n");
 		free_list(img);
 	}

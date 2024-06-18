@@ -61,6 +61,8 @@ char	**ft_read(char **argv)
 
 	i = 0;
 	lines = count_lines(argv[1]);
+	if (lines < 2)
+		return (0);
 	map = (char **)malloc(sizeof(char *) * (count_lines(argv[1]) + 1));
 	fd = open(argv[1], O_RDONLY);
 	while (lines-- > 0)

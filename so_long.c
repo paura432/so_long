@@ -42,9 +42,30 @@ int	check_extension(char *str)
 	return (free(ext), 0);
 }
 
-void	leaks(void)
+// void	leaks(void)
+// {
+// 	system("leaks -q so_long");
+// }
+
+int	check_permision(char **argv)
 {
-	system("leaks -q so_long");
+	if (open(argv[1], O_RDONLY) == -1)
+		return (0);
+	if (open("sprites/background.xpm", O_RDONLY) == -1)
+		return (0);
+	if (open("sprites/door.xpm", O_RDONLY) == -1)
+		return (0);
+	if (open("sprites/rick-back.xpm", O_RDONLY) == -1)
+		return (0);
+	if (open("sprites/rick-front.xpm", O_RDONLY) == -1)
+		return (0);
+	if (open("sprites/rick-left.xpm", O_RDONLY) == -1)
+		return (0);
+	if (open("sprites/rick-right.xpm", O_RDONLY) == -1)
+		return (0);
+	if (open("sprites/wall.xpm", O_RDONLY) == -1)
+		return (0);
+	return (1);
 }
 
 int	main(int argc, char **argv)
@@ -52,8 +73,11 @@ int	main(int argc, char **argv)
 	char	**map;
 	t_image	*img;
 
-	if (argc != 2 || (argc == 2 && !check_extension(argv[1])))
+	if (!check_permision(argv) || argc != 2
+		|| (argc == 2 && !check_extension(argv[1])))
 		return (ft_printf("error\nbad argument\n"), 1);
+	if (!ft_read(argv))
+		return (ft_printf("error\nbad map\n"));
 	map = ft_read(argv);
 	if (!check_map(map, argv))
 		return (free_matriz(map), ft_printf("error\nbad map\n"));
