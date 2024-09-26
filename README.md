@@ -66,3 +66,13 @@ This command starts the game, loading the map defined in the `map.ber` file.
 - **Extension**: The project can be extended to include enemies or other features for extra difficulty and complexity.
 
 ## Example Screenshots
+
+- **Initial Screen**: The map is loaded, and the player is placed in the starting position.
+- 
+![Captura desde 2024-09-26 22-06-39](https://github.com/user-attachments/assets/3ef8038b-384b-4406-b7ae-ac648804bc8b)
+
+- **In-game Screen**: The player moves around, collects items, and heads toward the exit.
+
+![Captura desde 2024-09-26 22-08-19](https://github.com/user-attachments/assets/c0c11c2f-c203-4c3d-b261-edcf097ffc27)
+
+
